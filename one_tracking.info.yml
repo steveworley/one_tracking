@@ -1,0 +1,6 @@
+name: ONE Tracking
+description: Tracking API Integration for the ONE project.
+package: ONE
+
+type: module
+core: 8.x

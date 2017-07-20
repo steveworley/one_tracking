@@ -1,0 +1,7 @@
+one_tracking.landing_page:
+  path: '/tracking'
+  defaults:
+    _controller: '\Drupal\one_tracking\Controller\PageController::tracking'
+    _title: 'Tracking'
+  requirements:
+    _permission: 'access content'

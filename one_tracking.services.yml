@@ -1,0 +1,4 @@
+services:
+  one_tracking.tracking:
+    class: 'Drupal\one_tracking\Service\TrackingService'
+    arguments: ['@http_client']
