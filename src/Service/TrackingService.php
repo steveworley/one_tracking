@@ -16,7 +16,7 @@ class TrackingService {
    *
    * @var string
    */
-  protected $trackingUrl = 'http://www.mocky.io/v2/59712d85100000030c71dc4c';
+  protected $trackingUrl = 'http://www.mocky.io/v2/59715a6a100000090d71dc7b';
 
   /**
    * Tracking constructor.

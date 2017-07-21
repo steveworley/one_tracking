@@ -60,11 +60,18 @@ class PageController extends ControllerBase {
     $service = $this->getTrackingService();
     $query_params = $this->requestStack->getCurrentRequest()->query->all();
     $result = $service->fetch($query_params);
+    $result = \GuzzleHttp\json_decode($result->getContents(), TRUE);
+    $result = $result['data'];
 
     $build = [
-      '#type' => 'markup',
-      '#markup' => '<pre>' . \GuzzleHttp\json_encode($this->requestStack->getCurrentRequest()->query->all()). '</pre><pre>' . $result . '</pre>',
+      '#type' => 'table',
+      '#header' => array_keys($result[0]),
+      '#rows' => [],
     ];
+
+    foreach ($result as $row) {
+      $build['#rows'][] = $row;
+    }
 
     return $build;
   }
