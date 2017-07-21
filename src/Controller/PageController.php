@@ -60,7 +60,6 @@ class PageController extends ControllerBase {
     $service = $this->getTrackingService();
     $query_params = $this->requestStack->getCurrentRequest()->query->all();
     $result = $service->fetch($query_params);
-    $result = \GuzzleHttp\json_decode($result->getContents(), TRUE);
     $result = $result['data'];
 
     $build = [

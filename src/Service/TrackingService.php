@@ -38,6 +38,8 @@ class TrackingService {
    */
   public function fetch($params = []) {
     $result = $this->httpClient->get($this->trackingUrl);
-    return $result->getBody();
+    $result = $result->getBody();
+    $result = \GuzzleHttp\json_decode($result->getContents(), TRUE);
+    return $result;
   }
 }
